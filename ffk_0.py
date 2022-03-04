@@ -1,7 +1,5 @@
 import numpy as np
-
 from numba import jit
-import matplotlib.pyplot as plt
 
 @jit(nopython=True)
 def _ffkloop(data_FT_r, data_FT_i, fk,
