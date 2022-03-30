@@ -45,7 +45,6 @@ def ffk(DATA, SAMPRATE, X, Y, SLOW, BAND):
 
     # Extract the arrays
     FK = np.zeros((nslow, nslow))
-    FDet = np.zeros((nslow, nslow))
     fk = np.real(FK)
     slow = np.real(SLOW)
 
@@ -66,6 +65,6 @@ def ffk(DATA, SAMPRATE, X, Y, SLOW, BAND):
     epdyfs2 = np.dot(f + 1, epdyfs1)
     epdyf = np.exp(epdyfs2)
 
-    FK = _ffkloop_np(data_target, epdxf, epdyf, nslow, nchan, chans, FK, FDet)
+    FK = _ffkloop_np(data_target, epdxf, epdyf, nslow, nchan, chans, FK)
 
     return FK
